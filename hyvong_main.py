@@ -138,8 +138,10 @@ def main():
   st.subheader("Not sure what to put here")
   st.header("Latex testing")
   st.latex(r"E=mc^2")
-  #generate_pdf()
-  preview_pdf() 
+  generate_pdf()
+  click = st.button("View PDF", type="primary")
+  if click: 
+    preview_pdf() 
 
   
   
