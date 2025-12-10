@@ -82,6 +82,7 @@ def preview_pdf(pdf_filename: Path =OUTPUT_DIR.joinpath(OUTPUT_FILENAME)):
   else:
     st.write("File has extension")
   st.write(f"output name {pdf_filename.name}")
+  st.write(f"output path {pdf_filename}")
   with open(pdf_filename, "rb") as f:
     base64_pdf = base64.b64encode(f.read()).decode("utf-8")
   
