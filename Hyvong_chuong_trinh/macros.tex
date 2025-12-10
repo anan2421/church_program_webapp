@@ -1,0 +1,139 @@
+%Multiple macros set for documents
+
+
+\newcommand{\CHURCHNAMEVN}{HỘI THÁNH TIN LÀNH HY VỌNG}
+\newcommand{\CHURCHNAMEEN}{VIETNAMESE HOPE BAPTIST CHURCH}
+\newcommand{\CHURCHWEBSITE}[1][\url{www.hyvongmoi.com}]{Website: #1}
+%\newcommand{\TITLEWEEKLY}{InsertWeeklyTitle}
+\newcommand{\ADDRESS}{2115 SE 148\textsuperscript{th} Ave., Portland, OR, 97233}
+\newcommand{\PASTORNAME}[1][Nguyễn Quốc Thái]{Mục sư #1}
+\newcommand{\PASTORPHONE}[1][(503)\,709-3682]{#1}
+\newcommand{\PASTOREMAIL}[1][\url{Thai43@hotmail.com}]{Email: #1}
+\newcommand{\TAGLINE}[1][Vinh Quang Thuộc Về Chúa]{\textit{#1}}
+%%%%% Main Program 
+\newcommand{\HDCTNAME}[1][Tên Người HDCT]{#1}
+
+
+%%%%%%%%%%%%%%%
+%%%%%Sub Program 
+%\newcommand{\subprogram}[3]{\makebox[\textwidth][l]{\resizebox{\textwidth}{!}{#1 \hfill #2 \hfill #3\\}}} %problem, the text won't scale if too long
+\begin{comment}
+\newlength{\subprogwidth}
+\newcommand{\subprogram}[3]{%
+  \settowidth{\subprogwidth}{\noindent#1\quad\hfill#2\quad\hfill#3}%
+  \ifdim\subprogwidth>\textwidth
+    % Too wide → shrink to fit
+    \resizebox{\textwidth}{!}{\noindent #1\quad\hfill#2\quad\hfill#3}%
+  \else
+    % Fits → print normally without scaling
+    \noindent #1\quad\hfill #2\quad\hfill#3%
+  \fi
+  \\%
+}
+\end{comment}
+\newlength{\subprogwidth}
+\newcommand{\subprogram}[3]{%
+  % Create 3 blocks: left, middle, right.
+  % Mid block (#2) can contain multiple lines.
+  \settowidth{\subprogwidth}{%
+    %\begin{tabular}[t]{@{}l@{}}#1\end{tabular}%
+    #1
+    \quad\hfill
+    \begin{tabular}[t]{@{}c@{}}#2\end{tabular}%
+    \quad\hfill
+    #3
+  }%
+  \ifdim\subprogwidth>\textwidth
+    % Shrink to fit
+    \resizebox{\textwidth}{!}{%
+    #1
+      \quad\hfill
+        \begin{tabular}[t]{@{}c@{}}#2\end{tabular}%
+      \quad\hfill
+      #3
+    }%
+  \else
+    % Normal size
+    #1
+    \quad\hfill
+    \begin{tabular}[t]{@{}c@{}}#2\end{tabular}%
+    \quad\hfill
+    #3
+  \fi
+  \\[0.5em]
+}
+
+%%%%%%%%%%%%
+\begin{comment}
+\newcommand{\VerseOfWeek}[2]{%
+    %\begin{minipage}[b]{0.45\textwidth}
+    \begin{scripture}[#1] %#1 is bible reference
+    \small #2
+    \end{scripture}
+    %\end{minipage}
+}
+\end{comment}
+
+
+\NewDocumentCommand{\VerseOfWeek}{O{John 14:21} O{Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the 
+Holy Spirit, and teaching them to obey everything I have commanded you. 
+And surely I am with you always, to the very end of the age.}}{
+  \begin{scripture}[#1]
+    \small #2
+  \end{scripture}
+}
+\begin{comment}
+\begin{minipage}[b]{0.45\textwidth}
+     \begin{scripture}[John 14:21]
+Vậy, hãy đi dạy dỗ muôn dân, hãy nhân danh Đức
+Cha, Đức Con, và Đức Thánh Linh mà làm phép báp-têm cho
+họ, và dạy họ giữ hết cả mọi điều mà ta đã truyền cho các
+ngươi. Và nầy, ta thường ở cùng các ngươi luôn cho đến tận
+thế. 
+\end{scripture}
+\end{minipage}
+\hfill
+%\hspace{.5cm}
+\begin{minipage}[b]{0.45\textwidth}
+    \begin{scripture}[John 14:21]
+Therefore go and make disciples of all nations, baptizing
+them in the name of the Father and of the Son and of the Holy
+Spirit, and teaching them to obey everything I have
+commanded you. And surely I am with you always, to the very
+end of the age. 
+\end{scripture}
+\end{minipage} 
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%Custom Title page
+\newcommand{\customtitle}{%
+    \begin{center}
+    \large{\textbf{\CHURCHNAMEVN}}\\[1em]
+    %insert image
+    \includegraphics[width=0.75\textwidth]{_images/cross_cover.jpg}\\[1em]
+    \TAGLINE\\[1em]
+    \begin{minipage}[t][1.625in]{2in}
+    \VerseOfWeek[John 14:21][Vậy, hãy đi dạy dỗ muôn dân, hãy nhân danh Đức
+Cha, Đức Con, và Đức Thánh Linh mà làm phép báp-têm cho
+họ, và dạy họ giữ hết cả mọi điều mà ta đã truyền cho các
+ngươi. Và nầy, ta thường ở cùng các ngươi luôn cho đến tận
+thế.]
+    \end{minipage}
+    %&&
+    \hspace{0.5cm}
+    \begin{minipage}[t][1.625in]{2in}
+    \VerseOfWeek[John 14:21][Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy
+Spirit, and teaching them to obey everything I have
+commanded you. And surely I am with you always, to the very
+end of the age.]
+    \end{minipage}\\[1em] 
+    %\end{tabular}
+    \vfill
+    \small{\textbf{\CHURCHNAMEEN}}\\
+    \ADDRESS \\[0.5em]
+    Quản Nhiệm: \PASTORNAME  \quad \PASTORPHONE \\
+    \CHURCHWEBSITE \qquad \PASTOREMAIL
+    \end{center} 
+    %\pagebreak
+}

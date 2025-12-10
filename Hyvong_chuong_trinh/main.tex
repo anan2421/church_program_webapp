@@ -1,0 +1,123 @@
+\documentclass[12pt, notitlepage]{extarticle}
+%\usepackage[english]{babel}
+\usepackage[vietnamese]{babel}
+\usepackage[T1,T5]{fontenc}
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+%\usepackage[letterpaper,top=1cm,bottom=3cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[
+              %paperwidth=5.5in,
+              %paperheight=8.5in,
+              letterpaper,
+              landscape,
+              top=-0.25in,
+              bottom=-0.05in,
+              left=0.15in,
+              right=0.15in,
+              includefoot,
+              includehead
+            ]{geometry}
+%\usepackage[letterpaper, landscape, twocolumn, margin=0.5in]{geometry}
+\input{preamble}
+\input{macros}
+%%%%
+% Page headers and footers
+%\pagestyle{plain}
+\fancyhf{}
+%\fancyfoot[C]{\thepage}
+%\fancyfoot[]{}
+\lfoot{}
+\rfoot{}
+\fancypagestyle{plain}{\pagestyle{fancy}}
+\pagenumbering{gobble}
+%%%%
+%Customize the section to be in the center 
+% For unnumbered sections (\section*)
+\titleformat{name=\section,numberless}%{\section}
+  {\centering\bfseries\normalsize}   % formatting: centered + bold + normak
+  {}                            % no label
+  {0pt}                         % spacing between label and title
+  {}                            % code before the title
+\titlespacing{\section}{0pt}{0pt}{0pt}
+%%%%
+\begin{document}
+\begin{minipage}[t][0.95\textheight][b]{0.46\textwidth}
+\vspace{-5pt}
+%\customtitle
+ \begin{center}
+    \large{\textbf{\CHURCHNAMEVN}}\\[1em]
+    %insert image
+    \includegraphics[width=0.75\textwidth]{_images/cross_cover.jpg}\\[1em]
+    \TAGLINE\\[1em]
+    \begin{minipage}[t][1.625in]{2in}
+    \VerseOfWeek[John 14:21][Vậy, hãy đi dạy dỗ muôn dân, hãy nhân danh Đức
+Cha, Đức Con, và Đức Thánh Linh mà làm phép báp-têm cho
+họ, và dạy họ giữ hết cả mọi điều mà ta đã truyền cho các
+ngươi. Và nầy, ta thường ở cùng các ngươi luôn cho đến tận
+thế.]
+    \end{minipage}
+    %&&
+    \hspace{0.5cm}
+    \begin{minipage}[t][1.625in]{2in}
+    \VerseOfWeek[John 14:21][Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy
+Spirit, and teaching them to obey everything I have
+commanded you. And surely I am with you always, to the very
+end of the age.]
+    \end{minipage}\\[1em] 
+    %\end{tabular}
+    \vfill
+    \small{\textbf{\CHURCHNAMEEN}}\\
+    \ADDRESS \\[0.5em]
+    Quản Nhiệm: \PASTORNAME  \quad \PASTORPHONE \\
+    \CHURCHWEBSITE \qquad \PASTOREMAIL
+    \end{center} 
+\end{minipage}
+\hspace{0.075in}
+%%
+\tcbset{colframe=white,colback=white,
+        boxsep=0pt,top=0pt,bottom=0pt,left=0pt,right=0pt,
+        nobeforeafter, arc=0pt, outer arc=0pt}
+%\begin{adjustbox}{width=\textwidth, height = \textheight, keepaspectratio, minipage=\textwidth}
+\begin{minipage}[t][0.95\textheight][b]{0.46\textwidth}
+\vspace*{0pt}
+\tcboxfit[width=\textwidth, height=0.95\textheight]{
+%\begin{adjustbox}{scale to=\textwidth x \textheight}
+%
+\section*{Chương Trình Thờ Phượng Chúa}
+\centering Chúa Nhật ngày 7/12/25 \qquad HDCT: \HDCTNAME \\[1em]
+\subprogram{Phút tĩnh tâm bước vào sự thờ phượng Chúa}{}{Hội Chúng}
+\subprogram{Đọc Kinh Thánh đối đáp}{Thi-thiên 67:3-7}{\HDCTNAME}
+\subprogram{Tôn Vinh Chúa}{}{Ban Ca Ngợi và Hội Chúng}
+\subprogram{Cầu Nguyện Khai Lễ}{}{\PASTORNAME}
+\subprogram{Chào mừng \& tâm tình với thiếu nhi}{}{\PASTORNAME}
+\subprogram{Cảm tạ và cầu xin}{}{\HDCTNAME}
+\subprogram{Dâng Hiến}{}{Anh Lê Thanh Phong và Anh Đỗ Văn Phát}
+\subprogram{Đọc Kinh Thánh}{Ma-thi-ơ 28:16-20}{Chị Trương Anh Tuấn}
+\subprogram{Giảng Luận}{\textbf{Chứng Nhân Về Chúa Jêsus}}{\PASTORNAME}
+\subprogram{Lễ Tiệc Thánh}{}{\PASTORNAME \,\& Ban Phụ Lễ}
+\subprogram{Tôn Vinh Chúa}{Ta Hy Sinh Vì Con hết \\ \url{https://www.youtube.com/watch?v=YN44APOjWuo}}{Hội Chúng}
+\subprogram{Cầu Nguyện Chúc Phước}{}{\PASTORNAME}
+%%%%
+\vfill
+\section*{Thông Báo}
+\begin{itemize}[label={}, leftmargin=0pt, itemsep=0pt]
+    \item Hội thánh chúng ta tuần này cầu nguyện cho gia đình Anh Phát.
+\item Kính mời quý vị Cao Niên tập hát Giáng Sinh sau giờ thờ phượng
+Chúa Nhật tuần tới.
+\item Thi Kinh Thánh vào Chúa Nhật hôm nay sau giờ thờ phượng.
+\item Thánh Lễ Giáng Sinh, ngày 21/12/25, lúc 5:00 chiều.
+\item Tổng dợt chương trình Giáng Sinh vào thứ Sáu, 19/12, lúc 7:00 tối.
+\item Đọc Kinh Thánh mỗi ngày tuần này trong Mác 10-16.
+\item Nhóm Cầu Nguyện Phấn Hưng thứ Ba tuần này, lúc 7:30 tối qua mạng này: \url{https://meet.jit.si/HyvongPortland}.
+\item Học Kinh Thánh thứ Tư tuần này, lúc 8 - 9 giờ tối qua mạng
+này: \url{https://meet.jit.si/HyvongPortland}.
+\item Sinh Hoạt Thiếu Niên thứ Bảy tuần này lúc 6:00 chiều tại nhà thờ.
+\item Hướng dẫn chương trình thờ phượng Chúa ngày 14/12/25: A. Kiệt Cảm
+tạ \& Cầu xin: C. Nhung Dâng hiến: C. Diệp \& C. Hồng
+\item Chúa Nhật ngày 14/12/25: C. Chi (A. Dave) sẽ phục vụ giải khát. Các
+Chúa Nhật kế tiếp: AC. Công, AC. Dũng. Nếu có thay đổi, xin quý con
+cái Chúa cho C. Công biết (Điện thoại: 503-200-0879).
+\end{itemize}
+}
+\end{minipage}
+%\end{adjustbox}
+\end{document}
