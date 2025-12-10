@@ -1,2 +1,1 @@
 streamlit-pdf-viewer
-texlive-latex-extra
