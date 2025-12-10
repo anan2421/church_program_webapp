@@ -134,7 +134,7 @@ def main():
   st.subheader("Not sure what to put here")
   st.header("Latex testing")
   st.latex(r"E=mc^2")
-  generate_pdf()
+  #generate_pdf()
   preview_pdf() 
 
   
