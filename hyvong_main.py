@@ -33,6 +33,7 @@ def sidebar():
     )
   st.write(f"you select: {add_radio}")
 
+@st.cache_data(show_spinner=False)
 def generate_pdf(file=TEXTESTFILE):
   file_to_compile = CURRENT_DIR.joinpath(TEXDIR,TEXTESTFILE) 
   st.write(f"File to compile: {file_to_compile}")
@@ -62,6 +63,7 @@ def generate_pdf(file=TEXTESTFILE):
     #view pdf 
     #st.pdf(OUTPUT_DIR.joinpath(file_out), 500)
 
+@st.cache_data(show_spinner=False)
 def preview_pdf(pdf_filename: Path =OUTPUT_DIR.joinpath(OUTPUT_FILENAME)):
   """This is pdf good backup"""
   #st.pdf(CURRENT_DIR.joinpath(TEXDIR, "TEST_output.pdf"))
@@ -83,6 +85,8 @@ def preview_pdf(pdf_filename: Path =OUTPUT_DIR.joinpath(OUTPUT_FILENAME)):
     st.write("File has extension")
   st.write(f"output name {pdf_filename.name}")
   st.write(f"output path {pdf_filename}")
+
+  base64_pdf=None
   with open(pdf_filename, "rb") as f:
     base64_pdf = base64.b64encode(f.read()).decode("utf-8")
   
