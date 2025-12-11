@@ -73,8 +73,15 @@
     %\end{minipage}
 }
 \end{comment}
+\NewDocumentCommand{\VerseOfWeek}{O{John 14:21} O{Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the 
+Holy Spirit, and teaching them to obey everything I have commanded you. 
+And surely I am with you always, to the very end of the age.}}{
+    \small {#2}
+    \vfill
+    \hfill \textbf{#1}
+}
 
-
+\begin{comment}
 \NewDocumentCommand{\VerseOfWeek}{O{John 14:21} O{Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the 
 Holy Spirit, and teaching them to obey everything I have commanded you. 
 And surely I am with you always, to the very end of the age.}}{
@@ -82,7 +89,7 @@ And surely I am with you always, to the very end of the age.}}{
     \small #2
   \end{scripture}
 }
-\begin{comment}
+%\begin{comment}
 \begin{minipage}[b]{0.45\textwidth}
      \begin{scripture}[John 14:21]
 Vậy, hãy đi dạy dỗ muôn dân, hãy nhân danh Đức
