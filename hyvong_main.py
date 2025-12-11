@@ -51,7 +51,8 @@ def generate_pdf(file=TEXTESTFILE):
         cwd= CURRENT_DIR.joinpath(TEXDIR),
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        text=True
+        text=True,
+        errors="ignore"
     )
   st.write(file_to_compile)
   if result.returncode != 0:
